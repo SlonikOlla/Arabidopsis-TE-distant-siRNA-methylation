@@ -1,18 +1,10 @@
 cff-version: 1.2.0
-message: "Please cite the associated manuscript and the archived release of this repository."
 title: "TE-distant gene networks show stress- and context-dependent 24-nt siRNA–DNA methylation correspondence in Arabidopsis thaliana"
+message: "If you use this repository, please cite the associated manuscript and the archived release."
 type: software
 authors:
-  - family-names: "Kovalchuk"
-    given-names: "Igor"
-version: "1.0.0"
+  - family-names: Kovalchuk
+    given-names: Igor
 repository-code: "https://github.com/SlonikOlla/Arabidopsis-TE-distant-siRNA-methylation"
-abstract: "Analysis code, metadata, compact processed results, and supplementary data for a multi-stress Arabidopsis analysis of 24-nt siRNA–DNA methylation correspondence at TE-distant gene-associated regions."
-keywords:
-  - Arabidopsis thaliana
-  - 24-nt siRNA
-  - DNA methylation
-  - RNA-directed DNA methylation
-  - environmental stress
-  - transposable elements
-license: MIT
+version: "1.0.0"
+date-released: "2026-09-06"

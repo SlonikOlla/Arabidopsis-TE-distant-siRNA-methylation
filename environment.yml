@@ -1,0 +1,14 @@
+name: arabidopsis-sirna-methylation
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python>=3.10
+  - pandas
+  - numpy
+  - scipy
+  - statsmodels
+  - matplotlib
+  - openpyxl
+  - bedtools
+# Add exact package versions from the working environment before release.

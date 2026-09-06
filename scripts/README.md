@@ -1,7 +1,5 @@
 # Analysis scripts
 
-This directory is reserved for the exact scripts used to generate the analyses reported in the manuscript.
+The exact executed analysis scripts are maintained in the working project on the author's Ubuntu/WSL system and should be added to the final public release without reconstruction or approximation.
 
-Scripts should be copied from the retained working project rather than reconstructed from manuscript descriptions. At minimum, the release should include the retained scripts for joint-tail/extreme-tail analysis, opportunity-controlled permutation, threshold sensitivity, threshold-free permutation, gene-level ranking/cross-stress recurrence, and the four heat-locus composite/QC analysis where those scripts are available.
-
-Do not place unrelated basal-state, HH/HL/LH/LL, salt, nitrogen, rice, or other exploratory analyses in this repository unless they directly support a reported result in the current manuscript.
+This manual-upload bundle intentionally does not fabricate missing scripts.
