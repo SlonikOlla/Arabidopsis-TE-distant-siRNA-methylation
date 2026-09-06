@@ -1,0 +1,21 @@
+{
+  "title": "TE-distant gene networks show stress- and context-dependent 24-nt siRNA–DNA methylation correspondence in Arabidopsis thaliana",
+  "upload_type": "software",
+  "description": "Analysis code, metadata, compact processed results, and supplementary data accompanying a multi-stress Arabidopsis study of 24-nt siRNA–DNA methylation correspondence at TE-distant gene-associated regions.",
+  "creators": [
+    {
+      "name": "Kovalchuk, Igor",
+      "affiliation": "University of Lethbridge"
+    }
+  ],
+  "keywords": [
+    "Arabidopsis thaliana",
+    "24-nt siRNA",
+    "DNA methylation",
+    "RNA-directed DNA methylation",
+    "environmental stress",
+    "transposable elements"
+  ],
+  "license": "MIT",
+  "version": "1.0.0"
+}
