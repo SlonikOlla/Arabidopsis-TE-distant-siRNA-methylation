@@ -1,0 +1,271 @@
+HEAT STRESS: 24-nt siRNA vs CHH METHYLATION
+Final analysis summary
+===========================================
+
+DESIGN
+------
+
+Small-RNA dataset:
+GSE239836
+Arabidopsis thaliana Col-0
+7-day seedlings
+Control vs 1 h heat shock at 37 C
+3 biological replicates per condition
+
+Methylation dataset:
+GSE139941
+Arabidopsis thaliana Col-0
+21-day leaves
+Control 21 C vs 42 C heat for 6, 12, or 24 h
+3 biological replicates per condition/time point
+
+IMPORTANT:
+These are independent cross-study datasets differing in tissue,
+developmental age, temperature, and exposure duration.
+Results therefore test cross-study spatial correspondence and
+must not be interpreted as a matched-sample causal experiment.
+
+
+SMALL-RNA QC
+-------------
+
+24-nt genomic mean CPM/window, 500 bp:
+
+CTRL1 0.853794
+CTRL2 0.719954
+CTRL3 0.406604
+
+HEAT1 1.017748
+HEAT2 1.197695
+HEAT3 0.394765
+
+Group mean:
+CTRL 0.660117
+HEAT 0.870069
+
+Mean increase approximately 32%.
+
+Replicate correlations:
+
+CTRL1 vs CTRL2:
+Pearson 0.968474
+log1p Pearson 0.888752
+Spearman 0.605678
+
+CTRL1 vs CTRL3:
+Pearson 0.880506
+log1p Pearson 0.616118
+Spearman 0.396625
+
+CTRL2 vs CTRL3:
+Pearson 0.959334
+log1p Pearson 0.662030
+Spearman 0.428777
+
+HEAT1 vs HEAT2:
+Pearson 0.953348
+log1p Pearson 0.942878
+Spearman 0.739173
+
+HEAT1 vs HEAT3:
+Pearson 0.887890
+log1p Pearson 0.633141
+Spearman 0.485083
+
+HEAT2 vs HEAT3:
+Pearson 0.776411
+log1p Pearson 0.637415
+Spearman 0.523348
+
+Locus-specific heat effects:
+HEAT1 vs HEAT2 effect Pearson 0.805092
+HEAT1 vs HEAT3 effect Pearson -0.294211
+HEAT2 vs HEAT3 effect Pearson -0.482331
+
+Thus HEAT3 differs substantially from HEAT1/2 at the
+locus-specific differential level, but was retained.
+
+
+METHYLATION QC
+--------------
+
+Mean site-level CHH:
+
+Control:
+rep1 0.0324182
+rep2 0.0634789
+rep3 0.0570027
+
+6 h:
+rep1 0.0331402
+rep2 0.0543736
+rep3 0.0524161
+
+12 h:
+rep1 0.0337951
+rep2 0.0514443
+rep3 0.0494876
+
+24 h:
+rep1 0.0352677
+rep2 0.0556797
+rep3 0.0498787
+
+Absolute CHH profiles showed good genomic reproducibility:
+Pearson correlations approximately 0.76-0.86.
+
+However, replicate-specific heat-control deltaCHH correlations
+were approximately zero at 6, 12, and 24 h.
+
+Replicate 1 showed small global CHH gains.
+Replicates 2 and 3 showed global CHH losses.
+
+No replicate was excluded.
+
+
+500-BP ANALYSIS
+---------------
+
+Complete methylation + active sRNA windows:
+n = 101250
+
+6 h:
+mean deltaCHH = -0.00451983
+fraction CHH loss = 0.634054
+Pearson delta24 vs deltaCHH = 0.002099
+P = 0.5042
+Spearman = 0.002469
+P = 0.4321
+directional concordance = 0.452840
+
+12 h:
+mean deltaCHH = -0.00651263
+fraction CHH loss = 0.680504
+Pearson = 0.000892
+P = 0.7766
+Spearman = 0.000411
+P = 0.8960
+directional concordance = 0.438005
+
+24 h:
+mean deltaCHH = -0.00370209
+fraction CHH loss = 0.632454
+Pearson = -0.003062
+P = 0.3299
+Spearman = -0.006328
+P = 0.0441
+directional concordance = 0.453254
+
+The nominal 24-h Spearman significance represents a
+biologically negligible effect size.
+
+Strong delta24 tails did not show corresponding directional
+CHH changes.
+
+
+500-BP MAGNITUDE ANALYSIS
+-------------------------
+
+6 h:
+Pearson |delta24| vs |deltaCHH| = -0.002460
+Spearman = 0.092403
+activity-adjusted rank correlation = 0.013540
+
+12 h:
+Pearson = -0.004345
+Spearman = 0.095120
+activity-adjusted rank correlation = 0.012245
+
+24 h:
+Pearson = -0.004142
+Spearman = 0.095121
+activity-adjusted rank correlation = 0.015156
+
+Thus the modest raw rank-based magnitude co-localization is
+largely attributable to baseline genomic activity/state.
+
+
+100-BP ANALYSIS
+---------------
+
+Complete methylation + active sRNA windows:
+n = 273291
+
+6 h:
+mean deltaCHH = -0.00471180
+Pearson = -0.000322
+P = 0.8664
+Spearman = 0.006019
+P = 0.00165
+directional concordance = 0.480459
+
+12 h:
+mean deltaCHH = -0.00671535
+Pearson = 0.000133
+P = 0.9447
+Spearman = 0.000377
+P = 0.8436
+directional concordance = 0.474692
+
+24 h:
+mean deltaCHH = -0.00375100
+Pearson = -0.000760
+P = 0.6910
+Spearman = -0.001644
+P = 0.3902
+directional concordance = 0.481088
+
+Strong delta24 tails again showed no meaningful directional
+CHH correspondence.
+
+
+100-BP MAGNITUDE ANALYSIS
+-------------------------
+
+6 h:
+Pearson |delta24| vs |deltaCHH| = -0.003550
+Spearman = 0.008717
+activity-adjusted rank correlation = 0.001540
+adjusted P = 0.4208
+
+12 h:
+Pearson = -0.004911
+Spearman = 0.012425
+activity-adjusted rank correlation = 0.001838
+adjusted P = 0.3366
+
+24 h:
+Pearson = -0.004766
+Spearman = 0.010169
+activity-adjusted rank correlation = 0.001839
+adjusted P = 0.3364
+
+
+CONCLUSION
+----------
+
+Heat stress is associated with substantial changes in both
+24-nt small-RNA abundance and CHH methylation at the global
+level in the analyzed public datasets.
+
+However, heat-associated locus-specific changes in 24-nt
+small-RNA abundance show essentially no spatial correspondence
+with CHH methylation changes at 6, 12, or 24 h.
+
+This result is robust to:
+- 500-bp versus 100-bp resolution
+- Pearson and Spearman correlation
+- directional concordance
+- strong delta24 tail analysis
+- magnitude analysis
+- adjustment for mean local sRNA and methylation activity
+
+The absence of spatial correspondence must NOT be interpreted
+as evidence that 24-nt siRNAs do not regulate CHH methylation
+during heat stress, because the sRNA and methylation datasets
+are from different experiments, tissues, developmental stages,
+temperatures, and exposure durations.
+
+Rather, the available cross-study heat datasets do not support
+detectable genome-wide spatial coupling between the measured
+heat-responsive 24-nt sRNA and CHH methylation profiles.

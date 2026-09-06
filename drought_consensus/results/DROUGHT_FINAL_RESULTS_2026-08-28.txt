@@ -1,0 +1,213 @@
+DROUGHT STRESS: 24-nt siRNA vs CHH METHYLATION
+Final analysis
+===============================================
+
+DATASETS
+
+Small RNA:
+GSE26356
+4-week-old Arabidopsis, Col gl1 RD29:LUC, shoots.
+Control vs drought to 40-50% relative water content.
+One library per condition.
+
+DNA methylation:
+GSE94075, mitotic drought experiment.
+4-week-old Col-0, whole rosette.
+Control vs nine days water deprivation.
+Three biological replicates per condition.
+
+The datasets are biologically similar in age, aerial tissue and drought
+treatment but are from different studies, genotypes and drought protocols.
+Results therefore describe cross-study spatial correspondence and must not
+be interpreted as direct causality.
+
+SMALL-RNA PROCESSING
+
+TAIR10.
+Exact Bowtie mapping:
+-f -v 0 -a -m 50 --best --strata
+
+Multimappers fractionalized using all reported nuclear + plastid +
+mitochondrial alignments.
+
+Fractional mapped nuclear 16-27 nt normalization denominators:
+Control = 3,280,883.016040099
+Drought = 3,063,777.564619892
+
+Corrected binned 24-nt CPM totals:
+Control = 502,764.8579
+Drought = 446,374.7945
+
+Thus drought was associated with an approximately 11.2% decrease in
+mapped nuclear 24-nt siRNA abundance.
+
+At 500 bp:
+79,773 active windows.
+66.35% decreased in 24-nt siRNA abundance.
+
+At 100 bp:
+274,189 active windows.
+59.88% decreased in 24-nt siRNA abundance.
+
+
+CHH METHYLATION
+
+Coverage-weighted CHH methylation from Bismark coverage files.
+
+500 bp:
+234,495 retained bins.
+
+Mean CHH:
+CTRL1 0.021603
+CTRL2 0.022808
+CTRL3 0.025582
+DROUGHT1 0.025864
+DROUGHT2 0.027534
+DROUGHT3 0.027350
+
+Control mean = 0.023331
+Drought mean = 0.026916
+Mean delta CHH = +0.003585
+
+Approximately 70.8% of retained 500-bp windows gained CHH methylation.
+
+Absolute CHH replicate Pearson correlations were approximately
+0.95-0.97.
+
+Drought effects relative to the common control mean showed positive
+spatial correspondence:
+Pearson approximately 0.45-0.55 at 500 bp.
+
+Thus the drought-associated CHH response was substantially more
+reproducible than that observed in the heat analysis.
+
+
+CORRECTED JOINT ANALYSIS
+
+500 bp
+------
+Joint active bins = 76,825
+Mean delta24 = -0.719478 CPM
+Mean deltaCHH = +0.009305
+
+Pearson(delta24,deltaCHH) = -0.073426
+P = 2.57e-92
+
+Spearman = -0.190318
+P < machine precision
+
+Direction concordance = 0.40431
+
+Baseline-adjusted rank correlation = +0.025519
+P = 1.50e-12
+
+Strong 5% delta24 loss threshold = -5.603895 CPM
+n = 3,842
+Mean deltaCHH = +0.026864
+Only 12.88% showed CHH loss.
+
+Strong 5% delta24 gain threshold = +1.228154 CPM
+n = 3,842
+Mean deltaCHH = +0.016224
+80.95% showed CHH gain.
+
+
+100 bp
+------
+Joint active bins = 251,130
+Mean delta24 = -0.217724 CPM
+Mean deltaCHH = +0.012428
+
+Pearson(delta24,deltaCHH) = -0.057062
+P = 3.97e-180
+
+Spearman = -0.067053
+P = 4.41e-248
+
+Direction concordance = 0.46148
+
+Baseline-adjusted rank correlation = +0.043175
+P = 6.60e-104
+
+Strong 5% delta24 loss threshold = -1.950184 CPM
+n = 12,557
+Mean deltaCHH = +0.041322
+Only 21.96% showed CHH loss.
+
+Strong 5% delta24 gain threshold = +0.771594 CPM
+n = 12,557
+Mean deltaCHH = +0.024040
+71.61% showed CHH gain.
+
+
+BASELINE-STATE ANALYSIS
+
+500 bp:
+Raw rank correlation = approximately -0.190
+Baseline-adjusted correlation = +0.0255
+
+Baseline CTRL24 vs CTRL CHH rank correlation = approximately +0.625.
+Baseline CTRL24 vs delta24 = approximately -0.53.
+Baseline CTRL CHH vs deltaCHH = approximately +0.36.
+
+100 bp:
+Raw rank correlation = approximately -0.067
+Baseline-adjusted correlation = +0.0432.
+
+Therefore the apparent inverse delta24-deltaCHH relationship is largely
+explained by baseline genomic state.
+
+
+STRONG-TAIL BASELINE MATCHING
+
+Raw analyses showed strong enrichment of reproducible CHH gain among
+the strongest 24-nt-loss loci:
+
+500 bp raw Fisher OR approximately 2.21.
+100 bp raw Fisher OR approximately 2.12.
+
+However, after matching windows for both baseline 24-nt abundance and
+baseline CHH methylation:
+
+500 bp:
+Observed reproducible CHH gains = 2,247
+Expected = 2,231.16
+Observed/expected = 1.0071
+Stratified baseline-adjusted OR = 1.0435
+
+100 bp:
+Observed reproducible CHH gains = 5,671
+Expected = 5,579.74
+Observed/expected = 1.0164
+Stratified baseline-adjusted OR = 1.0294
+
+Thus the apparently strong tail enrichment is almost entirely explained
+by the starting genomic state.
+
+
+FINAL INTERPRETATION
+
+Drought was associated with a global reduction in 24-nt siRNA abundance
+and a reproducible increase in CHH methylation.
+
+Unadjusted analyses suggested an inverse spatial relationship between
+changes in 24-nt siRNA abundance and CHH methylation, including an
+approximately twofold enrichment of reproducible CHH gains among loci
+with the strongest 24-nt siRNA losses.
+
+However, this apparent inverse relationship was almost entirely explained
+by baseline genomic state. Regions with characteristic high baseline
+24-nt siRNA and CHH activity preferentially contributed to both responses.
+
+After controlling for baseline 24-nt siRNA abundance and baseline CHH
+methylation, locus-specific correspondence between drought-associated
+changes in the two molecular layers was very weak.
+
+Therefore, the available cross-study drought datasets provide little
+evidence that locus-specific drought-induced changes in 24-nt siRNA
+abundance directly track corresponding changes in CHH methylation.
+
+This conclusion does not imply that 24-nt siRNAs do not regulate CHH
+methylation through RdDM. Positive-control analyses (ALY1 and DDC)
+demonstrate that the analytical pipeline readily detects spatial
+siRNA-CHH coupling when a strong coupled signal is present.

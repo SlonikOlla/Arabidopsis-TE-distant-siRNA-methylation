@@ -1,34 +1,54 @@
-# TE-distant 24-nt siRNA–DNA methylation correspondence in Arabidopsis
+# TE-distant gene networks show stress- and context-dependent 24-nt siRNA–DNA methylation correspondence in Arabidopsis thaliana
 
-Reproducibility package for the manuscript:
+Reproducibility repository for the expanded Arabidopsis analysis of stress-associated spatial correspondence between 24-nucleotide small interfering RNAs (24-nt siRNAs) and DNA methylation at TE-distant gene-associated regions.
 
-**TE-distant gene networks show stress- and context-dependent 24-nt siRNA–DNA methylation correspondence in Arabidopsis thaliana**
+## Scope
 
-This repository is intended to contain the exact analysis scripts, metadata, and processed result tables used for the manuscript. Raw public sequencing files are not redistributed; the source datasets are identified by accession in `metadata/datasets.tsv`.
+The study integrates independent public small-RNA and whole-genome bisulfite-sequencing datasets for heat, drought, phosphate deficiency, and bacterial pathogen challenge. Analyses use 100-bp and 500-bp windows and examine CG, CHG, and CHH methylation contexts.
 
-## Analysis scope
+The primary analysis excludes TE-overlapping windows and focuses on gene-associated windows located at least 1 kb from the nearest annotated transposable element. Because small-RNA and methylation measurements originate from independent public experiments, the study tests cross-study spatial correspondence rather than paired within-sample molecular coupling, temporal ordering, or causality.
 
-The study integrates independent public small-RNA and whole-genome bisulfite-sequencing datasets for heat, drought, phosphate deficiency, and bacterial pathogen challenge. Analyses use 100-bp and 500-bp genomic windows, CG/CHG/CHH methylation contexts, TE exclusion (primary analysis: >=1 kb from the nearest annotated TE), joint-tail analyses, genomic-window opportunity permutations, cross-context recurrence, threshold sensitivity, threshold-free continuous permutation analysis, and descriptive gene-level ranking.
+## Public datasets
 
-Because small-RNA and methylation measurements came from independent experiments, the analyses test cross-study spatial correspondence and do not establish within-sample molecular coupling, temporal ordering, or causality.
+| Stress | Small-RNA dataset | Methylation dataset |
+|---|---|---|
+| Heat | GSE239836 | GSE139941 |
+| Drought | GSE26356 | GSE94075 |
+| Phosphate deficiency | GSE17741 | GSE72770 |
+| Pathogen challenge | GSE19694 | GSE128768 |
 
-## Repository layout
+No raw public sequencing files are redistributed here.
 
-- `metadata/datasets.tsv` — public source datasets and accessions
-- `scripts/` — exact analysis and figure-generation scripts copied from the working project
-- `results/` — compact processed tables required to reproduce manuscript values and figures
-- `supplement/Supplementary_Table_S2.xlsx` — complete ranked and annotated gene-level results
-- `docs/REPRODUCIBILITY.md` — reproducibility and release notes
-- `collect_release_files.sh` — helper for assembling exact scripts/results from the working WSL project
+## Analysis framework
 
-## Important release rule
+1. 100-bp and 500-bp genomic windows.
+2. CG, CHG, and CHH methylation analyzed separately.
+3. TE-overlap exclusion; primary stringent analysis >=1 kb from the nearest annotated TE.
+4. Concordant gain and concordant loss analyzed separately.
+5. Joint-tail discovery at 1%, with 5% and 10% sensitivity analyses.
+6. Gene-level functional analysis with genomic-window opportunity permutation.
+7. Cross-context recurrence at gene and exact physical-window levels.
+8. Threshold-free, window-structure-preserving permutation analysis for targeted heat-response systems.
+9. Descriptive gene-level ranking, functional annotation, and cross-stress recurrence.
 
-Do not replace the original analysis scripts with rewritten or reconstructed versions. The public repository should contain the exact scripts used for the reported analyses. Run `collect_release_files.sh` from the project root (`~/arabidopsis_siRNA_methylation`) to stage available manuscript-related scripts and compact outputs, then review the staged files before publication.
+## Repository organization
 
-## Data availability
+- `metadata/` — source dataset accessions and experimental-design notes.
+- `scripts/` — exact analysis and figure-generation scripts used for the reported analyses.
+- `results/` — compact processed result tables supporting reported statistics and figures.
+- `supplement/` — supplementary data files.
+- `docs/` — reproducibility and provenance documentation.
 
-All source sequencing datasets are public through NCBI GEO. Large public source files should be retrieved from the original archives rather than committed to GitHub. A tagged GitHub release should be archived in Zenodo for a permanent DOI.
+**The manuscript itself is intentionally not included in this repository.**
 
-## License
+## Reproducibility policy
 
-No software license has been selected in this staging package. Choose the repository license before public release.
+The release will contain exact retained analysis scripts where available. Reconstructed or approximate code will not be presented as historical executed code. Large public FASTQ, BAM, and per-cytosine methylation files are excluded and should be retrieved from their original repositories.
+
+## Citation
+
+Please cite the associated manuscript and the versioned Zenodo archive corresponding to the release used.
+
+**Kovalchuk I. TE-distant gene networks show stress- and context-dependent 24-nt siRNA–DNA methylation correspondence in Arabidopsis thaliana.**
+
+A Zenodo DOI will be added after the first release is archived.
