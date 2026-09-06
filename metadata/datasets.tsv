@@ -1,0 +1,9 @@
+stress	assay	accession	repository	note
+Heat	small RNA	GSE239836	NCBI GEO	independent source experiment
+Heat	WGBS	GSE139941	NCBI GEO	methylome source experiment
+Drought	small RNA	GSE26356	NCBI GEO	independent source experiment
+Drought	WGBS	GSE94075	NCBI GEO	methylome source experiment
+Phosphate deficiency	small RNA	GSE17741	NCBI GEO	root small-RNA dataset
+Phosphate deficiency	WGBS	GSE72770	NCBI GEO	root methylome dataset
+Pathogen challenge	small RNA	GSE19694	NCBI GEO	independent source experiment
+Pathogen challenge	WGBS	GSE128768	NCBI GEO	methylome source experiment
